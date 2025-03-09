@@ -15,22 +15,60 @@
         <StackPanel Spacing="10">
           <Svg Path="/Assets/Images/logo.svg"
                Width="40"/>
-          <Button Content="Home"
-                  HorizontalAlignment="Stretch"/>
-          <Button Content="Process"
-                  HorizontalAlignment="Stretch"/>
-          <Button Content="Actions"
-                  HorizontalAlignment="Stretch"/>
-          <Button Content="Macros"
-                  HorizontalAlignment="Stretch"/>
-          <Button Content="Reporter"
-                  HorizontalAlignment="Stretch"/>
-          <Button Content="History"
-                  HorizontalAlignment="Stretch"/>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xE2C4;"/>
+              <Label Classes="akko"
+                     Content="Home"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xE346;"/>
+              <Label Classes="akko"
+                     Content="Process"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xE7F2;"/>
+              <Label Classes="akko"
+                     Content="Actions"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xE3EE;"/>
+              <Label Classes="akko"
+                     Content="Macros"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xEB7A;"/>
+              <Label Classes="akko"
+                     Content="Reporter"/>
+            </StackPanel>
+          </Button>
+          <Button HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+              <Label Classes="icon"
+                     Content="&#xE03A;"/>
+              <Label Classes="akko"
+                     Content="History"/>
+            </StackPanel>
+          </Button>
         </StackPanel>
         <Button Grid.Row="1"
-                Content="Settings"
-                />
+                Classes="transparent">
+          <Label Classes="icon-only"
+                 Content="&#xE272;"/>
+        </Button>
       </Grid>
     </Border>
   </Grid>
