@@ -2,8 +2,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         x:Class="AngelSix.BatchProcess.MainWindow"
-        Title="AngelSix.BatchProcess">
-    Welcome to Avalonia!
+        Title="AngelSix.BatchProcess"
+        Width="1024" Height="600"
+        >
+  <Grid ColumnDefinitions="Auto,*"
+        Background="{DynamicResource PrimaryBackground}">
+    <Border Padding="20"
+            Background="{DynamicResource PrimaryBackgroundGradient}">
+      <Grid RowDefinitions="*, Auto">
+        <StackPanel Spacing="10">
+          <Svg Path="/Assets/Images/logo.svg"
+               Width="40"/>
+          <Button Content="Home"
+                  HorizontalAlignment="Stretch"/>
+          <Button Content="Process"
+                  HorizontalAlignment="Stretch"/>
+          <Button Content="Actions"
+                  HorizontalAlignment="Stretch"/>
+          <Button Content="Macros"
+                  HorizontalAlignment="Stretch"/>
+          <Button Content="Reporter"
+                  HorizontalAlignment="Stretch"/>
+          <Button Content="History"
+                  HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <Button Grid.Row="1"
+                Content="Settings"
+                />
+      </Grid>
+    </Border>
+  </Grid>
 </Window>
