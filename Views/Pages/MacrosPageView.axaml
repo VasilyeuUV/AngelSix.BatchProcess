@@ -3,17 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AngelSix.BatchProcess.Views.Pages.ProcessPageView"
+             x:Class="AngelSix.BatchProcess.Views.Pages.MacrosPageView"
              
              Foreground="White"
              Background="Black"
              xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels.Pages"
-             x:DataType="vm:ProcessPageViewModel"
+             x:DataType="vm:MacrosPageViewModel"
              >
-
   <Design.DataContext>
-    <vm:ProcessPageViewModel/>
+    <vm:MacrosPageViewModel/>
   </Design.DataContext>
 
   <Label Content="{Binding PageName}"/>
+
 </UserControl>

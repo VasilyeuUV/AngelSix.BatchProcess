@@ -2,13 +2,13 @@
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
 
-public partial class HomePageViewModel : PageViewModel
+public partial class ReporterPageViewModel : PageViewModel
 {
     /// <summary>
     /// CTOR.
     /// </summary>
-    public HomePageViewModel()
+    public ReporterPageViewModel()
     {
-        PageName = ApplicationPageName.Home;
+        PageName = ApplicationPageName.Reporter;
     }
 }

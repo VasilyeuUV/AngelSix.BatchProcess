@@ -1,7 +1,14 @@
-﻿namespace AngelSix.BatchProcess.ViewModels.Pages;
+﻿using AngelSix.BatchProcess.Data;
 
-public partial class ProcessPageViewModel : ViewModelBase
+namespace AngelSix.BatchProcess.ViewModels.Pages;
+
+public partial class ProcessPageViewModel : PageViewModel
 {
-
-    public string Test { get; set; } = "Process";
+    /// <summary>
+    /// CTOR.
+    /// </summary>
+    public ProcessPageViewModel()
+    {
+        PageName = ApplicationPageName.Process;
+    }
 }

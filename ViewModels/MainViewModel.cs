@@ -1,4 +1,6 @@
-﻿using AngelSix.BatchProcess.ViewModels.Pages;
+﻿using AngelSix.BatchProcess.Data;
+using AngelSix.BatchProcess.Factories;
+using AngelSix.BatchProcess.ViewModels.Pages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -8,8 +10,7 @@ public partial class MainViewModel : ViewModelBase
 {
     private const string _buttonActiveClass = "active";
 
-    private readonly HomePageViewModel _homePage = new();
-    private readonly ProcessPageViewModel _processPage = new();
+    private readonly PageFactory _pageFactory;
 
     [ObservableProperty] private string _title = "AngelSix.BatchProcess";
     [ObservableProperty] private bool _isSideMenuExpanded = false;                  // - show/hide side menu
@@ -22,23 +23,40 @@ public partial class MainViewModel : ViewModelBase
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsActiveHomePage))]
-    [NotifyPropertyChangedFor(nameof(IsActivProcessPage))]
-    private ViewModelBase _currentPage;
+    [NotifyPropertyChangedFor(nameof(IsActiveProcessPage))]
+    [NotifyPropertyChangedFor(nameof(IsActiveActionsPage))]
+    [NotifyPropertyChangedFor(nameof(IsActiveMacrosPage))]
+    [NotifyPropertyChangedFor(nameof(IsActiveReporterPage))]
+    [NotifyPropertyChangedFor(nameof(IsActiveHistoryPage))]
+    [NotifyPropertyChangedFor(nameof(IsActiveSettingsPage))]
+    private PageViewModel _currentPage;
 
 
     /// <summary>
     /// CTOR
     /// </summary>
-    public MainViewModel()
+    public MainViewModel(PageFactory pageFactory)
     {
-        CurrentPage = _homePage;
+        _pageFactory = pageFactory;
+        GoToHome();
     }
 
-    public bool IsActiveHomePage => CurrentPage == _homePage;
-    public bool IsActivProcessPage => CurrentPage == _processPage;
+
+    public bool IsActiveHomePage => CurrentPage.PageName == ApplicationPageName.Home;
+    public bool IsActiveProcessPage => CurrentPage.PageName == ApplicationPageName.Process;
+    public bool IsActiveActionsPage => CurrentPage.PageName == ApplicationPageName.Actions;
+    public bool IsActiveMacrosPage => CurrentPage.PageName == ApplicationPageName.Macros;
+    public bool IsActiveReporterPage => CurrentPage.PageName == ApplicationPageName.Reporter;
+    public bool IsActiveHistoryPage => CurrentPage.PageName == ApplicationPageName.History;
+    public bool IsActiveSettingsPage => CurrentPage.PageName == ApplicationPageName.Settings;
 
 
     [RelayCommand] private void SideMenuResize() => IsSideMenuExpanded = !IsSideMenuExpanded;
-    [RelayCommand] private void GoToHome() => CurrentPage = _homePage;
-    [RelayCommand] private void GoToProcess() => CurrentPage = _processPage;
+    [RelayCommand] private void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Home);
+    [RelayCommand] private void GoToProcess() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Process);
+    [RelayCommand] private void GoToActions() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Actions);
+    [RelayCommand] private void GoToMacros() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Macros);
+    [RelayCommand] private void GoToReporter() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Reporter);
+    [RelayCommand] private void GoToHistory() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.History);
+    [RelayCommand] private void GoToSettings() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Settings);
 }

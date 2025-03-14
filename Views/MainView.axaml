@@ -53,8 +53,9 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
+          
           <Button HorizontalAlignment="Stretch"
-                  Classes.active="{Binding IsActivProcessPage}"
+                  Classes.active="{Binding IsActiveProcessPage}"
                   Command="{Binding GoToProcessCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
@@ -64,7 +65,10 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch">
+          
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActiveActionsPage}"
+                  Command="{Binding GoToActionsCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE7F2;"/>
@@ -73,7 +77,10 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch">
+          
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActiveMacrosPage}"
+                  Command="{Binding GoToMacrosCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE3EE;"/>
@@ -82,7 +89,10 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch">
+          
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActiveReporterPage}"
+                  Command="{Binding GoToReporterCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xEB7A;"/>
@@ -91,7 +101,10 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch">
+          
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActiveHistoryPage}"
+                  Command="{Binding GoToHistoryCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE03A;"/>
@@ -102,7 +115,8 @@
           </Button>
         </StackPanel>
         <Button Grid.Row="1"
-                Classes="transparent">
+                Classes="transparent"
+                Command="{Binding GoToSettingsCommand}">
           <Label Classes="icon-only"
                  Content="&#xE272;"/>
         </Button>
