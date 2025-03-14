@@ -3,24 +3,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
-        x:Class="AngelSix.BatchProcess.MainWindow"
-        Title="AngelSix.BatchProcess"
+        x:Class="AngelSix.BatchProcess.MainView"
         Width="1024" Height="600"
+        
+        xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels"
+        x:DataType="vm:MainViewModel"
+        
+        Title="{Binding Title}"
         >
+
+  <Design.DataContext>
+    <vm:MainViewModel/>
+  </Design.DataContext>
+  
   <Grid ColumnDefinitions="Auto,*"
         Background="{DynamicResource PrimaryBackground}">
     <Border Padding="20"
-            Background="{DynamicResource PrimaryBackgroundGradient}">
+            Background="{DynamicResource PrimaryBackgroundGradient}"
+            >
+            <!--Width="{Binding SideMenuWidth}"-->
       <Grid RowDefinitions="*, Auto">
         <StackPanel Spacing="10">
+          
           <Svg Path="/Assets/Images/logo.svg"
+               IsVisible="{Binding IsSideMenuExpanded}"
+               PointerPressed="Svg_PointerPressed"
                Width="40"/>
+          <Svg Path="/Assets/Images/logo.svg"
+               IsVisible="{Binding !IsSideMenuExpanded}"
+               PointerPressed="Svg_PointerPressed"
+               Width="20"/>
+          
           <Button HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE2C4;"/>
               <Label Classes="akko"
-                     Content="Home"/>
+                     Content="Home"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch">
@@ -28,7 +48,8 @@
               <Label Classes="icon"
                      Content="&#xE346;"/>
               <Label Classes="akko"
-                     Content="Process"/>
+                     Content="Process"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch">
@@ -36,7 +57,8 @@
               <Label Classes="icon"
                      Content="&#xE7F2;"/>
               <Label Classes="akko"
-                     Content="Actions"/>
+                     Content="Actions"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch">
@@ -44,7 +66,8 @@
               <Label Classes="icon"
                      Content="&#xE3EE;"/>
               <Label Classes="akko"
-                     Content="Macros"/>
+                     Content="Macros"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch">
@@ -52,7 +75,8 @@
               <Label Classes="icon"
                      Content="&#xEB7A;"/>
               <Label Classes="akko"
-                     Content="Reporter"/>
+                     Content="Reporter"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
           <Button HorizontalAlignment="Stretch">
@@ -60,7 +84,8 @@
               <Label Classes="icon"
                      Content="&#xE03A;"/>
               <Label Classes="akko"
-                     Content="History"/>
+                     Content="History"
+                     IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
         </StackPanel>

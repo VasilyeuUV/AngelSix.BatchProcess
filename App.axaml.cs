@@ -1,3 +1,4 @@
+using AngelSix.BatchProcess.ViewModels;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -15,7 +16,10 @@ namespace AngelSix.BatchProcess
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow();
+                desktop.MainWindow = new MainView
+                {
+                    DataContext = new MainViewModel()
+                };
             }
 
             base.OnFrameworkInitializationCompleted();
