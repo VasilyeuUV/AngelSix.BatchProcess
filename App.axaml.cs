@@ -10,6 +10,7 @@ namespace AngelSix.BatchProcess
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
+            //DataTemplates.Add(new ViewLocator());     // - подключаем в app.axaml
         }
 
         public override void OnFrameworkInitializationCompleted()

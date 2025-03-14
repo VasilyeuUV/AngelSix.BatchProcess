@@ -7,6 +7,7 @@
         Width="1024" Height="600"
         
         xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels"
+        xmlns:view="clr-namespace:AngelSix.BatchProcess.Views"
         x:DataType="vm:MainViewModel"
         
         Title="{Binding Title}"
@@ -15,16 +16,23 @@
   <Design.DataContext>
     <vm:MainViewModel/>
   </Design.DataContext>
-  
+
   <Grid ColumnDefinitions="Auto,*"
         Background="{DynamicResource PrimaryBackground}">
+
+
+    <ContentControl Grid.Column="1"
+                    Content="{Binding CurrentPage}"
+                    />
+
+
     <Border Padding="20"
             Background="{DynamicResource PrimaryBackgroundGradient}"
             >
-            <!--Width="{Binding SideMenuWidth}"-->
+      <!--Width="{Binding SideMenuWidth}"-->
       <Grid RowDefinitions="*, Auto">
         <StackPanel Spacing="10">
-          
+
           <Svg Path="/Assets/Images/logo.svg"
                IsVisible="{Binding IsSideMenuExpanded}"
                PointerPressed="Svg_PointerPressed"
@@ -33,8 +41,10 @@
                IsVisible="{Binding !IsSideMenuExpanded}"
                PointerPressed="Svg_PointerPressed"
                Width="20"/>
-          
-          <Button HorizontalAlignment="Stretch">
+
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActiveHomePage}"
+                  Command="{Binding GoToHomeCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE2C4;"/>
@@ -43,7 +53,9 @@
                      IsVisible="{Binding IsSideMenuExpanded}"/>
             </StackPanel>
           </Button>
-          <Button HorizontalAlignment="Stretch">
+          <Button HorizontalAlignment="Stretch"
+                  Classes.active="{Binding IsActivProcessPage}"
+                  Command="{Binding GoToProcessCommand}">
             <StackPanel Orientation="Horizontal">
               <Label Classes="icon"
                      Content="&#xE346;"/>

@@ -47,15 +47,20 @@
       </Transitions>
     </Setter>
   </Style>
+
   <Style Selector="Button.transparent:pointerover /template/ ContentPresenter">
     <Setter Property="RenderTransform" Value="scale(1.2)"/>
   </Style>
-
+  
   <Style Selector="Button:pointerover /template/ ContentPresenter">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverForeground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"/>
   </Style>
 
+  <Style Selector="Button.active /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource PrimaryActiveBackground}"/>
+  </Style>
+  
   <Style Selector="Button.transparent">
     <Setter Property="Background" Value="Transparent"/>
   </Style>
