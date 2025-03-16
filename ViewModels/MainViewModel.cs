@@ -33,6 +33,14 @@ public partial class MainViewModel : ViewModelBase
 
 
     /// <summary>
+    /// Design-time only constructor
+    /// </summary>
+    public MainViewModel()
+    {
+        CurrentPage = new SettingsPageViewModel();
+    }
+
+    /// <summary>
     /// CTOR
     /// </summary>
     public MainViewModel(PageFactory pageFactory)
