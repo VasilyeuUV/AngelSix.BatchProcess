@@ -52,15 +52,10 @@
           <!-- Release License -->
           <TextBlock TextWrapping="Wrap"
                      Text="Remove license of BatchProcess from this machine and release the license back to the server ready to be transferred to another machine."/>
-          <Button Grid.Column="1" Grid.Row="0"
-                  HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xE2FE;"/>
-              <Label Classes="akko"
-                     Content="Release License"/>
-            </StackPanel>
-          </Button>
+          <IconButton Grid.Column="1" Grid.Row="0"
+                      HorizontalAlignment="Stretch"
+                      IconText="&#xE2FE;"
+                      Content="Release License"/>
 
           <!-- Skip Files -->
           <TextBlock Grid.Column="0" Grid.Row="1"
@@ -90,12 +85,8 @@
           </StackPanel>
 
           <Button Grid.Column="1" Grid.Row="0"
-                  HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="akko"
-                     Content="+ Folder"/>
-            </StackPanel>
-          </Button>
+                      HorizontalAlignment="Stretch"
+                      Content="+ Folder"/>
         </Grid>
         <ListBox ItemsSource="{Binding LocationPaths}"/>
       </StackPanel>
@@ -134,22 +125,12 @@
           <TextBox Grid.Column="2"/>
         </Grid>
         <StackPanel Orientation="Horizontal">
-          <Button HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xE23E;"/>
-              <Label Classes="akko"
-                     Content="Login"/>
-            </StackPanel>
-          </Button>
-          <Button HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xE094;"/>
-              <Label Classes="akko"
-                     Content="Refresh Vault"/>
-            </StackPanel>
-          </Button>
+          <IconButton HorizontalAlignment="Stretch"
+                      IconText="&#xE23E;"
+                      Content="Login"/>
+          <IconButton HorizontalAlignment="Stretch"
+                      IconText="&#xE094;"
+                      Content="Refresh Vault"/>
         </StackPanel>
         <Label Content="Connection established"/>
       </StackPanel>
@@ -164,30 +145,15 @@
           If you are experiencing issues you can try clearing the cache (this won't remove the license).
         </TextBlock>
         <StackPanel Orientation="Horizontal">
-          <Button HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xEC54;"/>
-              <Label Classes="akko"
-                     Content="Clear Cache"/>
-            </StackPanel>
-          </Button>
-          <Button HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xE5DE;"/>
-              <Label Classes="akko"
-                     Content="Export Cache"/>
-            </StackPanel>
-          </Button>
-          <Button HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal">
-              <Label Classes="icon"
-                     Content="&#xE20C;"/>
-              <Label Classes="akko"
-                     Content="Import Cache"/>
-            </StackPanel>
-          </Button>
+          <IconButton HorizontalAlignment="Stretch"
+                      IconText="&#xEC54;"
+                      Content="Clear Cache"/>
+          <IconButton HorizontalAlignment="Stretch"
+                      IconText="&#xE5DE;"
+                      Content="Export Cache"/>
+          <IconButton HorizontalAlignment="Stretch"
+                      IconText="&#xE20C;"
+                      Content="Import Cache"/>
         </StackPanel>
       </StackPanel>
 

@@ -6,7 +6,10 @@ using AngelSix.BatchProcess.ViewModels.Pages;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Metadata;
 using Microsoft.Extensions.DependencyInjection;
+
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "AngelSix.BatchProcess.Controls")]
 
 namespace AngelSix.BatchProcess
 {

@@ -31,14 +31,15 @@
     </Setter>
   </Style>
   
-  <Style Selector="Button">
-    <Setter Property="Padding" Value="0"/>
+  <Style Selector=":is(Button)">
     <Setter Property="FontSize" Value="20"/>
+    <Setter Property="CornerRadius" Value="10"/>
+    <Setter Property="Padding" Value="9 5.5 9.2 5.5"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"/>
   </Style>
 
-  <Style Selector="Button /template/ ContentPresenter">
+  <Style Selector=":is(Button) /template/ ContentPresenter">
     <Setter Property="Transitions">
       <Transitions>
         <BrushTransition Property="Foreground" Duration="0:0:0.1"/>
@@ -48,42 +49,42 @@
     </Setter>
   </Style>
 
-  <Style Selector="Button.transparent:pointerover /template/ ContentPresenter">
+  <Style Selector=":is(Button).transparent:pointerover /template/ ContentPresenter">
     <Setter Property="RenderTransform" Value="scale(1.2)"/>
   </Style>
   
-  <Style Selector="Button:pointerover /template/ ContentPresenter">
+  <Style Selector=":is(Button):pointerover /template/ ContentPresenter">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverForeground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"/>
   </Style>
 
-  <Style Selector="Button.active /template/ ContentPresenter">
+  <Style Selector=":is(Button).active /template/ ContentPresenter">
     <Setter Property="Background" Value="{DynamicResource PrimaryActiveBackground}"/>
   </Style>
   
-  <Style Selector="Button.transparent">
+  <Style Selector=":is(Button).transparent">
     <Setter Property="Background" Value="Transparent"/>
   </Style>
 
-  <Style Selector="Button.transparent:pointerover /template/ ContentPresenter">
+  <Style Selector=":is(Button).transparent:pointerover /template/ ContentPresenter">
     <Setter Property="Background" Value="Transparent"/>
   </Style>
 
   <Style Selector="Label.icon">
     <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}"/>
-    <Setter Property="Margin" Value="0 1 8 0"/>
+    <Setter Property="Margin" Value="0 2 8 0"/>
   </Style>
 
   <Style Selector="Label.akko">
     <Setter Property="FontFamily" Value="{DynamicResource AkkoPro}"/>
-    <Setter Property="Padding" Value="0 2 10 0"/>
+    <Setter Property="Padding" Value="0 3 10 0"/>
   </Style>
 
   <Style Selector="Label.icon-only">
     <Setter Property="Margin" Value="0"/>
   </Style>
 
-  <Style Selector="Button.transparent Label.icon-only">
+  <Style Selector=":is(Button).transparent Label.icon-only">
     <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"/>
   </Style>
   
