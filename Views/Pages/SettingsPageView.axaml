@@ -41,33 +41,34 @@
     <!-- LEFT SIDE CONTENT -->
     <StackPanel Grid.Column="0" Grid.Row="1"
                 Spacing="15"
-                Margin="15">
+                Margin="25">
       <!--____________________________________________________________________________-->
       <!-- General -->
       <StackPanel>
-        <Label Content="General"/>
-        <Grid ColumnDefinitions="*, Auto"
-              RowDefinitions="Auto, Auto, Auto">
+        <Label Classes="h2"
+               Content="General"/>
+        <Grid ColumnDefinitions="*, 20, Auto"
+              RowDefinitions="Auto, 20, Auto, 20, Auto">
 
           <!-- Release License -->
           <TextBlock TextWrapping="Wrap"
                      Text="Remove license of BatchProcess from this machine and release the license back to the server ready to be transferred to another machine."/>
-          <IconButton Grid.Column="1" Grid.Row="0"
+          <IconButton Grid.Column="2" Grid.Row="0"
                       HorizontalAlignment="Stretch"
                       IconText="&#xE2FE;"
                       Content="Release License"/>
 
           <!-- Skip Files -->
-          <TextBlock Grid.Column="0" Grid.Row="1"
-                     TextWrapping="Wrap"
-                     Text="Skip files if only Open, Save (Optional) and Close are valid actions."/>
-          <CheckBox Grid.Column="1" Grid.Row="1"/>
-
-          <!-- Duplicate Entries -->
           <TextBlock Grid.Column="0" Grid.Row="2"
                      TextWrapping="Wrap"
+                     Text="Skip files if only Open, Save (Optional) and Close are valid actions."/>
+          <CheckBox Grid.Column="2" Grid.Row="2"/>
+
+          <!-- Duplicate Entries -->
+          <TextBlock Grid.Column="0" Grid.Row="4"
+                     TextWrapping="Wrap"
                      Text="Allow duplicate entries of the same file in project list."/>
-          <CheckBox Grid.Column="1" Grid.Row="2"/>
+          <CheckBox Grid.Column="2" Grid.Row="4"/>
 
         </Grid>
       </StackPanel>
@@ -75,7 +76,8 @@
       <!--____________________________________________________________________________-->
       <!-- Locations -->
       <StackPanel>
-        <Label Content="Locations"/>
+        <Label Classes="h2"
+               Content="Locations"/>
         <Grid ColumnDefinitions="*, Auto">
           <StackPanel>
             <TextBlock TextWrapping="Wrap"
@@ -85,8 +87,9 @@
           </StackPanel>
 
           <Button Grid.Column="1" Grid.Row="0"
-                      HorizontalAlignment="Stretch"
-                      Content="+ Folder"/>
+                  Classes="outline small"
+                  Content="+ Folder"
+                  HorizontalAlignment="Stretch"/>
         </Grid>
         <ListBox ItemsSource="{Binding LocationPaths}"/>
       </StackPanel>
@@ -97,11 +100,12 @@
     <!-- RIGHT SIDE CONTENT -->
     <StackPanel Grid.Column="1" Grid.Row="1"
                 Spacing="15"
-                Margin="15">
+                Margin="25">
       <!--____________________________________________________________________________-->
       <!-- SolidWorks Host -->
       <StackPanel>
-        <Label Content="SolidWorks Host"/>
+        <Label Classes="h2"
+               Content="SolidWorks Host"/>
         <TextBlock TextWrapping="Wrap">
           <!--xml:space="preserve"-->
           BatchProcess can work locally on the current machine, or on any machine accessible over the network or even internet.
@@ -115,7 +119,8 @@
       <!--____________________________________________________________________________-->
       <!-- PDM Enterprise -->
       <StackPanel Spacing="15">
-        <Label Content="PDM Enterprise"/>
+        <Label Classes="h2"
+               Content="PDM Enterprise"/>
         <TextBlock TextWrapping="Wrap"
                    Text="If you are using PDM Enterprise enter the credetials below and test login. BatchProcess can then automatically handle checking in and out files from PDM Enterprise."/>
         <Grid ColumnDefinitions="*, *, *">
@@ -125,12 +130,13 @@
           <TextBox Grid.Column="2"/>
         </Grid>
         <StackPanel Orientation="Horizontal">
-          <IconButton HorizontalAlignment="Stretch"
-                      IconText="&#xE23E;"
-                      Content="Login"/>
-          <IconButton HorizontalAlignment="Stretch"
+          <IconButton IconText="&#xE23E;"
+                      Content="Login"
+                      HorizontalAlignment="Stretch"/>
+          <IconButton Classes="outline"
                       IconText="&#xE094;"
-                      Content="Refresh Vault"/>
+                      Content="Refresh Vault"
+                      HorizontalAlignment="Stretch"/>
         </StackPanel>
         <Label Content="Connection established"/>
       </StackPanel>
@@ -138,22 +144,25 @@
       <!--____________________________________________________________________________-->
       <!-- Settings Cache -->
       <StackPanel>
-        <Label Content="Settings Cache"/>
+        <Label Classes="h2"
+               Content="Settings Cache"/>
         <TextBlock TextWrapping="Wrap">
           Various settings are stored locally including Processes, Actions, Macros, Reports and History.
           <LineBreak/><LineBreak/>
           If you are experiencing issues you can try clearing the cache (this won't remove the license).
         </TextBlock>
         <StackPanel Orientation="Horizontal">
-          <IconButton HorizontalAlignment="Stretch"
+          <IconButton Classes="alert"
                       IconText="&#xEC54;"
-                      Content="Clear Cache"/>
-          <IconButton HorizontalAlignment="Stretch"
-                      IconText="&#xE5DE;"
-                      Content="Export Cache"/>
-          <IconButton HorizontalAlignment="Stretch"
+                      Content="Clear Cache"
+                      HorizontalAlignment="Stretch"/>
+          <IconButton IconText="&#xE5DE;"
+                      Content="Export Cache"
+                      HorizontalAlignment="Stretch"/>
+          <IconButton Classes="outline"
                       IconText="&#xE20C;"
-                      Content="Import Cache"/>
+                      Content="Import Cache"
+                      HorizontalAlignment="Stretch"/>
         </StackPanel>
       </StackPanel>
 

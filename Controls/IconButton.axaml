@@ -5,6 +5,9 @@
     <Border Padding="20">
       <StackPanel Spacing="20">
         <IconButton Content="Click Me!"
+                    IconText="&#xE2C4;"
+                    Height="100"/>
+        <IconButton Content="Click Me!"
                     IconText="&#xE2C4;"/>
         <IconButton Classes="accent"
                     Content="Click Me!"
@@ -46,9 +49,12 @@
           <ContentPresenter.ContentTemplate>
             <DataTemplate DataType="x:Object">
               <StackPanel Orientation="Horizontal">
-                <Label Classes="icon" Content="{Binding $parent[IconButton].IconText}"/>
+                <Label Classes="icon"
+                       Content="{Binding $parent[IconButton].IconText}"
+                       VerticalAlignment="Center"/>
                 <ContentControl DataContext="{Binding $parent[IconButton].DataContext}"
-                                  Content="{Binding $parent[IconButton].Content}"/>
+                                Content="{Binding $parent[IconButton].Content}"
+                                VerticalAlignment="Center"/>
               </StackPanel>
             </DataTemplate>
           </ContentPresenter.ContentTemplate>

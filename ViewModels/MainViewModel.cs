@@ -13,7 +13,7 @@ public partial class MainViewModel : ViewModelBase
     private readonly PageFactory _pageFactory;
 
     [ObservableProperty] private string _title = "AngelSix.BatchProcess";
-    [ObservableProperty] private bool _isSideMenuExpanded = false;                  // - show/hide side menu
+    [ObservableProperty] private bool _isSideMenuExpanded = true;                  // - show/hide side menu
     
     //public SvgImage Logo => new()
     //{

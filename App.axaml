@@ -10,7 +10,7 @@
   <Application.DataTemplates>
     <local:ViewLocator/>
   </Application.DataTemplates>
-  
+
   <Application.Styles>
     <FluentTheme />
     <StyleInclude Source="Styles/AppDefaultStyles.axaml"></StyleInclude>
@@ -23,7 +23,7 @@
         <MergeResourceInclude Source="/Controls/IconButton.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
-    
+
     <SolidColorBrush x:Key="PrimaryForeground">#CFCFCF</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryBackground">#14172D</SolidColorBrush>
     <LinearGradientBrush x:Key="PrimaryBackgroundGradient"
@@ -37,10 +37,39 @@
     <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
 
-    <FontFamily x:Key="AkkoPro">/Assets/Fonts/AkkoPro-Regular.ttf#Akko Pro</FontFamily>
-    <FontFamily x:Key="AkkoProBold">/Assets/Fonts/AkkoPro-Bold.ttf#.</FontFamily>
+    <SolidColorBrush x:Key="OutlineButtonForeground">#00FFFF</SolidColorBrush>
+
+    <LinearGradientBrush x:Key="PrimaryButtonBackgroundGradient"
+                         StartPoint="0%, 0%"
+                         EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#00FFFF"/>
+      <GradientStop Offset="1" Color="#FF00FF"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="PrimaryButtonHoverGradient"
+                         StartPoint="0%, 0%"
+                         EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#00FFFF"/>
+      <GradientStop Offset="1" Color="#00FFFF"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="AlertButtonBackgroundGradient"
+                     StartPoint="0%, 0%"
+                     EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#FFFF00"/>
+      <GradientStop Offset="1" Color="#FFBB00"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="AlertButtonHoverBackground"
+                     StartPoint="0%, 0%"
+                     EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#FFFF00"/>
+      <GradientStop Offset="1" Color="#FFFF00"/>
+    </LinearGradientBrush>
+    
     <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
     <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
+    <FontFamily x:Key="Nunito">/Assets/Fonts#Nunito</FontFamily>
 
   </Application.Resources>
 </Application>

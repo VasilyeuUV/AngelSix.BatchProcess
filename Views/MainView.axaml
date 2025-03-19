@@ -43,61 +43,63 @@
                PointerPressed="Svg_PointerPressed"
                Width="20"/>
 
-          <IconButton Classes.active="{Binding IsActiveHomePage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveHomePage}"
                       IconText="&#xE2C4;"
                       Command="{Binding GoToHomeCommand}"
                       HorizontalAlignment="Stretch">
-            <Label Classes="akko"
-                   Content="Home"
+            <Label Content="Home"
                    IsVisible="{Binding IsSideMenuExpanded}"/>
           </IconButton>
 
-          <IconButton Classes.active="{Binding IsActiveProcessPage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveProcessPage}"
                       IconText="&#xE346;"
-                      Command="{Binding GoToProcessCommand}">
-            <Label Classes="akko"
-                   Content="Process"
-                   IsVisible="{Binding IsSideMenuExpanded}"/>            
+                      Command="{Binding GoToProcessCommand}"
+                      HorizontalAlignment="Stretch">
+            <Label Content="Process"
+                   IsVisible="{Binding IsSideMenuExpanded}"/>
           </IconButton>
 
-          <IconButton Classes.active="{Binding IsActiveActionsPage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveActionsPage}"
                       IconText="&#xE7F2;"
-                      Command="{Binding GoToActionsCommand}">
-            <Label Classes="akko"
-                   Content="Actions"
+                      Command="{Binding GoToActionsCommand}"
+                      HorizontalAlignment="Stretch">
+            <Label Content="Actions"
                    IsVisible="{Binding IsSideMenuExpanded}"/>
-          </IconButton>          
+          </IconButton>
 
-          <IconButton Classes.active="{Binding IsActiveMacrosPage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveMacrosPage}"
                       IconText="&#xE3EE;"
                       Command="{Binding GoToMacrosCommand}"
                       HorizontalAlignment="Stretch">
-            <Label Classes="akko"
-                   Content="Macros"
+            <Label Content="Macros"
                    IsVisible="{Binding IsSideMenuExpanded}"/>
           </IconButton>
 
-          <IconButton Classes.active="{Binding IsActiveReporterPage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveReporterPage}"
                       IconText="&#xEB7A;"
                       Command="{Binding GoToReporterCommand}"
                       HorizontalAlignment="Stretch">
-            <Label Classes="akko"
-                   Content="Reporter"
+            <Label Content="Reporter"
                    IsVisible="{Binding IsSideMenuExpanded}"/>
           </IconButton>
 
-          <IconButton Classes.active="{Binding IsActiveHistoryPage}"
+          <IconButton Classes="subtle"
+                      Classes.active="{Binding IsActiveHistoryPage}"
                       IconText="&#xE03A;"
                       Command="{Binding GoToHistoryCommand}"
                       HorizontalAlignment="Stretch">
-            <Label Classes="akko"
-                 Content="History"
-                 IsVisible="{Binding IsSideMenuExpanded}"/>
+            <Label Content="History"
+                   IsVisible="{Binding IsSideMenuExpanded}"/>
           </IconButton>
-          
+
         </StackPanel>
         <IconButton Grid.Row="1"
-                    Classes="transparent"
+                    Classes="subtle transparent"
                     IconText="&#xE272;"
                     Content=""
                     Command="{Binding GoToSettingsCommand}"/>
