@@ -21,6 +21,7 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Controls/IconButton.axaml"/>
+        <MergeResourceInclude Source="/Controls/CheckBox.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 

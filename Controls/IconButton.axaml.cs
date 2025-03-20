@@ -5,7 +5,6 @@ namespace AngelSix.BatchProcess.Controls;
 
 public class IconButton : Button
 {
-
     /// <summary>
     /// IconText StyledProperty definition
     /// </summary>
@@ -21,6 +20,4 @@ public class IconButton : Button
         get => this.GetValue(IconTextProperty);
         set => SetValue(IconTextProperty, value);
     }
-
-
 }

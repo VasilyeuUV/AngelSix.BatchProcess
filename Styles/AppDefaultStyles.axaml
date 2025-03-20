@@ -2,22 +2,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
     <Border Padding="20"
-            Width="200"
+            Width="300"
             Background="{DynamicResource PrimaryBackgroundGradient}">
       <!-- Add Controls for Previewer Here -->
-      <StackPanel Spacing="15">
-        <IconButton Classes="subtle"
-                    HorizontalAlignment="Stretch"
-                    IconText="&#xE2C4;"
-                    Content="Home"/>
-        <Label Classes="h2"
-               Content="General"/>
-        <Button Content="Normal"/>
-        <Button Classes="subtle" Content="Subtle"/>
-        <Button Classes="outline" Content="Outline"/>
-        <Button Classes="alert" Content="Alert"/>
-        <Button Classes="small" Content="Small"/>
-      </StackPanel>
+      <Grid ColumnDefinitions="*, *">
+        <StackPanel Spacing="15">
+          <IconButton Classes="subtle"
+                      HorizontalAlignment="Stretch"
+                      IconText="&#xE2C4;"
+                      Content="Home"/>
+          <Label Classes="h2"
+                 Content="General"/>
+          <Button Content="Normal"/>
+          <Button Classes="subtle" Content="Subtle"/>
+          <Button Classes="outline" Content="Outline"/>
+          <Button Classes="alert" Content="Alert"/>
+          <Button Classes="small" Content="Small"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Spacing="15">
+          <CheckBox/>
+          <CheckBox Content="Content"/>
+          <CheckBox IsChecked="true"/>
+          <CheckBox IsChecked="true"
+                    Content="Content"/>
+        </StackPanel>
+      </Grid>
     </Border>
   </Design.PreviewWith>
 
@@ -60,15 +70,15 @@
     <Setter Property="CornerRadius" Value="6"/>
     <Setter Property="Padding" Value="6 2"/>
   </Style>
-  
+
   <!-- Normal button -->
 
-  <Style Selector=":is(Button)">
+  <Style Selector=":is(Button):not(CheckBox)">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackgroundGradient}"/>
   </Style>
 
-  <Style Selector=":is(Button):pointerover /template/ ContentPresenter">
+  <Style Selector=":is(Button):not(CheckBox):pointerover /template/ ContentPresenter">
     <Setter Property="Background" Value="{DynamicResource PrimaryButtonHoverGradient}"/>
   </Style>
 
