@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal">
   <Design.PreviewWith>
-    <Border Padding="20">
+    <Border Padding="20"
+            Width="300"
+            Background="{DynamicResource PrimaryBackground}">
       <StackPanel Spacing="20">
         <IconButton Content="Click Me!"
                     IconText="&#xE2C4;"
@@ -37,6 +39,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <ContentPresenter x:Name="PART_ContentPresenter"
+                          Foreground="{TemplateBinding Foreground}"
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
@@ -51,9 +54,11 @@
               <StackPanel Orientation="Horizontal">
                 <Label Classes="icon"
                        Content="{Binding $parent[IconButton].IconText}"
+                       Foreground="{Binding $parent[IconButton].Foreground}"
                        VerticalAlignment="Center"/>
                 <ContentControl DataContext="{Binding $parent[IconButton].DataContext}"
                                 Content="{Binding $parent[IconButton].Content}"
+                                Foreground="{Binding $parent[IconButton].Foreground}"
                                 VerticalAlignment="Center"/>
               </StackPanel>
             </DataTemplate>

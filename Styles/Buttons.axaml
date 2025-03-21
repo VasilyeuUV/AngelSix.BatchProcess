@@ -8,49 +8,55 @@
       <Grid ColumnDefinitions="*, *">
         <StackPanel Spacing="15">
           <IconButton Classes="subtle"
-                      HorizontalAlignment="Stretch"
                       IconText="&#xE2C4;"
-                      Content="Home"/>
-          <Label Classes="h2"
-                 Content="General"/>
+                      Content="Home"
+                      HorizontalAlignment="Stretch"/>
           <Button Content="Normal"/>
           <Button Classes="subtle" Content="Subtle"/>
           <Button Classes="outline" Content="Outline"/>
           <Button Classes="alert" Content="Alert"/>
           <Button Classes="small" Content="Small"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1"
-                    Spacing="15">
           <CheckBox/>
           <CheckBox Content="Content"/>
           <CheckBox IsChecked="true"/>
           <CheckBox IsChecked="true"
                     Content="Content"/>
         </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Spacing="15">
+          <IconButton Classes="subtle"
+                      IconText="&#xE2C4;"
+                      Content="Home"
+                      IsEnabled="False"
+                      HorizontalAlignment="Stretch"/>
+          <Button Content="Normal"
+                  IsEnabled="False"/>
+          <Button Classes="subtle" 
+                  Content="Subtle"
+                  IsEnabled="False"/>
+          <Button Classes="outline"
+                  Content="Outline"
+                  IsEnabled="False"/>
+          <Button Classes="alert"
+                  Content="Alert"
+                  IsEnabled="False"/>
+          <Button Classes="small"
+                  Content="Small"
+                  IsEnabled="False"/>
+          <CheckBox IsEnabled="False"/>
+          <CheckBox Content="Content"
+                    IsEnabled="False"/>
+          <CheckBox IsChecked="true"
+                    IsEnabled="False"/>
+          <CheckBox IsChecked="true"
+                    Content="Content"
+                    IsEnabled="False"/>
+        </StackPanel>
       </Grid>
     </Border>
   </Design.PreviewWith>
 
   <!-- Add Styles Here -->
-
-  <Style Selector="Window">
-    <Setter Property="FontFamily" Value="{DynamicResource Nunito}"/>
-  </Style>
-
-  <Style Selector="Label.h2">
-    <Setter Property="Padding" Value="0 0 8 0"/>
-    <Setter Property="FontWeight" Value="Black"/>
-    <Setter Property="FontSize" Value="20"/>
-  </Style>
-
-
-  <Style Selector="Border">
-    <Setter Property="Transitions">
-      <Transitions>
-        <DoubleTransition Property="Width" Duration="0:0:1"/>
-      </Transitions>
-    </Setter>
-  </Style>
 
   <!--###############################################################################-->
   <!-- Region BUTTON STYLES -->
@@ -63,6 +69,10 @@
     <Setter Property="BorderThickness" Value="3"/>
   </Style>
 
+  <Style Selector=":is(Button) Label">
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+  </Style>
+  
   <!-- Small button -->
 
   <Style Selector=":is(Button).small">
@@ -79,6 +89,11 @@
   </Style>
 
   <Style Selector=":is(Button):not(CheckBox):pointerover /template/ ContentPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+    <Setter Property="Background" Value="{DynamicResource PrimaryButtonHoverGradient}"/>
+  </Style>
+
+  <Style Selector=":is(Button):not(CheckBox):pointerover">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryButtonHoverGradient}"/>
   </Style>
@@ -114,12 +129,12 @@
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonBackgroundGradient}"/>
   </Style>
 
-  <Style Selector=":is(Button).outline:pointerover /template/ ContentPresenter">
+  <Style Selector=":is(Button).outline:pointerover">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryButtonHoverGradient}"/>
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonHoverGradient}"/>
   </Style>
-
+  
   <!-- Button effects -->
 
   <Style Selector=":is(Button).transparent:pointerover /template/ ContentPresenter">
@@ -153,14 +168,5 @@
   </Style>
 
   <!-- End Region BUTTON STYLES -->
-
-  <Style Selector="Label.icon">
-    <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}"/>
-    <Setter Property="Margin" Value="0 -2 8 0"/>
-  </Style>
-
-  <Style Selector="Label.icon-only">
-    <Setter Property="Margin" Value="0"/>
-  </Style>
-
+  
 </Styles>
