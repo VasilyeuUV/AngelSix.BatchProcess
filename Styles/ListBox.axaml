@@ -22,10 +22,15 @@
   </Style>
 
   <Style Selector="ListBox">
-    <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundGradient}"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryForeground}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource DefaultGradient}"/>
     <Setter Property="BorderThickness" Value="3"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
+
+    <Style Selector="^:pointerover">
+      <Setter Property="BorderBrush" Value="{DynamicResource HoverGradient}"/>
+    </Style>
   </Style>
 
 </Styles>

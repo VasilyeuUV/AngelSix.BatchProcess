@@ -57,6 +57,7 @@
           <TextBlock TextWrapping="Wrap"
                      Text="Remove license of BatchProcess from this machine and release the license back to the server ready to be transferred to another machine."/>
           <IconButton Grid.Column="2" Grid.Row="0"
+                      Classes="small"
                       HorizontalAlignment="Stretch"
                       IconText="&#xE2FE;"
                       Content="Release License"/>
@@ -155,10 +156,11 @@
         </Grid>
         <StackPanel Orientation="Horizontal"
                     Spacing="10">
-          <IconButton IconText="&#xE23E;"
+          <IconButton Classes="small"
+                      IconText="&#xE23E;"
                       Content="Login"
                       HorizontalAlignment="Stretch"/>
-          <IconButton Classes="outline"
+          <IconButton Classes="outline small"
                       IconText="&#xE094;"
                       Content="Refresh Vault"
                       HorizontalAlignment="Stretch"/>
@@ -181,14 +183,15 @@
         <StackPanel Orientation="Horizontal"
                     Spacing="10"
                     Margin="0 10">
-          <IconButton Classes="alert"
+          <IconButton Classes="alert small"
                       IconText="&#xEC54;"
                       Content="Clear Cache"
                       HorizontalAlignment="Stretch"/>
-          <IconButton IconText="&#xE5DE;"
+          <IconButton Classes="small"
+                      IconText="&#xE5DE;"
                       Content="Export Cache"
                       HorizontalAlignment="Stretch"/>
-          <IconButton Classes="outline"
+          <IconButton Classes="outline small"
                       IconText="&#xE20C;"
                       Content="Import Cache"
                       HorizontalAlignment="Stretch"/>
