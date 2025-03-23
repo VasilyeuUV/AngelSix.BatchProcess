@@ -2,11 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="900"
              x:Class="AngelSix.BatchProcess.Views.Pages.ActionsPageView"
              
-             Foreground="White"
-             Background="Black"
+             Foreground="{DynamicResource PrimaryForeground}"
+             Background="{DynamicResource PrimaryBackground}"
              xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels.Pages"
              x:DataType="vm:ActionsPageViewModel"
              >
@@ -14,6 +14,46 @@
     <vm:ActionsPageViewModel/>
   </Design.DataContext>
 
-  <Label Content="{Binding PageName}"/>
+  <Grid ColumnDefinitions="*"
+        RowDefinitions="Auto, *">
 
+    <!--###############################################################################-->
+    <!-- HEADER -->
+    <Grid Name="HeaderGrid">
+      <Image Source="{SvgImage /Assets/Images/background-actions.svg}"
+             Height="100"
+             Stretch="UniformToFill"/>
+      <StackPanel HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+        <Label Classes="h1"
+               Content="Actions"
+               HorizontalAlignment="Center"/>
+        <Label Classes="sub2"
+               Content="Create and manage all actions that can be used in a process"
+               HorizontalAlignment="Center"/>
+      </StackPanel>
+    </Grid>
+
+    <!--###############################################################################-->
+    <!-- MAIN -->
+    <Border Grid.Row="1"
+            Padding="25">
+      <TabControl Grid.Row="1">
+        <TabItem Header="Print"
+                 IsSelected="True">
+          <TextBlock Text="This is Tab 1"/>
+        </TabItem>
+        <TabItem Header="Custom Properties">
+          <TextBlock Text="This is Tab 2"/>
+        </TabItem>
+        <TabItem Header="File Info"/>
+        <TabItem Header="Save Model"/>
+        <TabItem Header="Save Drawing"/>
+        <TabItem Header="Import File"/>
+        <TabItem Header="Drawing Templates"/>
+        <TabItem Header="Macros"/>
+      </TabControl>
+    </Border>
+    
+  </Grid>
 </UserControl>

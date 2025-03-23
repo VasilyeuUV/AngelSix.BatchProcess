@@ -117,15 +117,15 @@
 
   <!-- Normal button -->
   <Style Selector=":is(Button):not(CheckBox)">
-    <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundSubtle}"/>
     <Setter Property="Background" Value="{DynamicResource ActiveGradient}"/>
 
     <Style Selector="^:pointerover">
-      <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
       <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}"/>
 
       <Style Selector="^:pointerover /template/ ContentPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
         <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}"/>
       </Style>
 
@@ -139,9 +139,15 @@
     <Setter Property="Background" Value="{DynamicResource AlertGradient}"/>
 
     <Style Selector="^:pointerover /template/ ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
       <Setter Property="Background" Value="{DynamicResource AlertHoverGradient}"/>
-    </Style>
 
+      <Style Selector="^ /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+        <Setter Property="Background" Value="{DynamicResource AlertHoverGradient}"/>
+      </Style>
+      
+    </Style>    
   </Style>
 
 
@@ -162,17 +168,17 @@
   <!-- Outline button -->
 
   <Style Selector=":is(Button).outline">
-    <Setter Property="Foreground" Value="{DynamicResource ActiveGradient}"/>
+    <Setter Property="Foreground" Value="{DynamicResource ActiveGradientText}"/>
     <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"/>
     <Setter Property="BorderBrush" Value="{DynamicResource ActiveGradient}"/>
 
     <Style Selector="^:pointerover">
-      <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
       <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}"/>
       <Setter Property="BorderBrush" Value="{DynamicResource ActiveHoverGradient}"/>
 
       <Style Selector="^ /template/ ContentPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
         <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ActiveHoverGradient}"/>
       </Style>

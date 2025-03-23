@@ -30,11 +30,28 @@
         <MergeResourceInclude Source="/Controls/ComboBox.axaml"/>
         <MergeResourceInclude Source="/Controls/ComboBoxItem.axaml"/>
         <MergeResourceInclude Source="/Controls/ListBoxItem.axaml"/>
+        <MergeResourceInclude Source="/Controls/TabControl.axaml"/>
+        <MergeResourceInclude Source="/Controls/TabItem.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 
+
+    <!-- FontFamily -->
+    <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+    <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
+    <FontFamily x:Key="Nunito">/Assets/Fonts#Nunito</FontFamily>
+
+    <!-- SolidColorBrush -->
     <SolidColorBrush x:Key="PrimaryForeground">#CFCFCF</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryForegroundSubtle">#AAA</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryBackground">#14172D</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
+    
+    <!--################################################################################################-->
+    <!-- REGION GRADIENTS -->
+
+    <!-- Primary -->
     <LinearGradientBrush x:Key="PrimaryBackgroundGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">
@@ -42,9 +59,7 @@
       <GradientStop Offset="1" Color="#151E3E"/>
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
-    <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
-
+    <!-- Default -->
     <LinearGradientBrush x:Key="DefaultGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">
@@ -52,18 +67,26 @@
       <GradientStop Offset="1" Color="#333B5A"/>
     </LinearGradientBrush>
 
+    <!-- Active -->
     <LinearGradientBrush x:Key="ActiveGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">
-      <GradientStop Offset="0" Color="#00FFFF"/>
-      <GradientStop Offset="1" Color="#00AAAA"/>
+      <GradientStop Offset="0" Color="#6633DD"/>
+      <GradientStop Offset="1" Color="#43189F"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="ActiveGradientText"
+                     StartPoint="0%, 0%"
+                     EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#7C59CD"/>
+      <GradientStop Offset="1" Color="#7C59CD"/>
+    </LinearGradientBrush>
+    
     <LinearGradientBrush x:Key="ActiveHoverGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">
-      <GradientStop Offset="0" Color="#00FFFF"/>
-      <GradientStop Offset="1" Color="#00FFFF"/>
+      <GradientStop Offset="0" Color="#6633DD"/>
+      <GradientStop Offset="1" Color="#6633DD"/>
     </LinearGradientBrush>
     
     <LinearGradientBrush x:Key="HoverGradient"
@@ -73,6 +96,7 @@
       <GradientStop Offset="1" Color="#FF00FF"/>
     </LinearGradientBrush>
 
+    <!-- Success -->
     <LinearGradientBrush x:Key="SuccessGradient"
                      StartPoint="0%, 0%"
                      EndPoint="100%, 0%">
@@ -80,13 +104,15 @@
       <GradientStop Offset="1" Color="#009900"/>
     </LinearGradientBrush>
 
+    <!-- Warning -->
     <LinearGradientBrush x:Key="WarningGradient"
                      StartPoint="0%, 0%"
                      EndPoint="100%, 0%">
       <GradientStop Offset="0" Color="#FF0000"/>
       <GradientStop Offset="1" Color="#AA0000"/>
     </LinearGradientBrush>
-    
+
+    <!-- Alert -->
     <LinearGradientBrush x:Key="AlertGradient"
                      StartPoint="0%, 0%"
                      EndPoint="100%, 0%">
@@ -100,10 +126,6 @@
       <GradientStop Offset="0" Color="#FFFF00"/>
       <GradientStop Offset="1" Color="#FFFF00"/>
     </LinearGradientBrush>
-    
-    <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
-    <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
-    <FontFamily x:Key="Nunito">/Assets/Fonts#Nunito</FontFamily>
 
   </Application.Resources>
 </Application>
