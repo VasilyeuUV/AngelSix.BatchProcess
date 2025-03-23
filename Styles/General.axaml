@@ -37,8 +37,6 @@
     <Setter Property="FontFamily" Value="{DynamicResource Nunito}"/>
   </Style>
 
-
-
   <Style Selector="Border">
     <Setter Property="Transitions">
       <Transitions>

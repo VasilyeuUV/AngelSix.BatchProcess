@@ -29,7 +29,7 @@
   <!-- Add Styles Here -->
 
   <Style Selector="Label">
-    <!--<Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>-->
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
   </Style>
 
   <Style Selector="Label.h1">

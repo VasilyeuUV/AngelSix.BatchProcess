@@ -98,13 +98,12 @@
           </IconButton>
 
         </StackPanel>
-        <Button Grid.Row="1"
-                Classes="transparent subtle"
-                Classes.active="{Binding IsActiveSettingsPage}"
-                Command="{Binding GoToSettingsCommand}">
-          <Label Classes="icon-only"
-                 Content="&#xE272;"/>
-        </Button>
+        <IconButton Grid.Row="1"
+                    Classes="transparent subtle"
+                    Classes.active="{Binding IsActiveSettingsPage}"
+                    IconText="&#xE272;"
+                    Content=""
+                Command="{Binding GoToSettingsCommand}"/>
       </Grid>
     </Border>
   </Grid>

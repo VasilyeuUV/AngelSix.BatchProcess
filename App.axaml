@@ -15,7 +15,6 @@
     <FluentTheme />
     <StyleInclude Source="Styles/General.axaml"></StyleInclude>
     <StyleInclude Source="Styles/Buttons.axaml"></StyleInclude>
-    <StyleInclude Source="Styles/ComboBox.axaml"></StyleInclude>
     <StyleInclude Source="Styles/Labels.axaml"></StyleInclude>
     <StyleInclude Source="Styles/ListBox.axaml"></StyleInclude>
     <StyleInclude Source="Styles/TextBlock.axaml"></StyleInclude>
@@ -28,6 +27,9 @@
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Controls/IconButton.axaml"/>
         <MergeResourceInclude Source="/Controls/CheckBox.axaml"/>
+        <MergeResourceInclude Source="/Controls/ComboBox.axaml"/>
+        <MergeResourceInclude Source="/Controls/ComboBoxItem.axaml"/>
+        <MergeResourceInclude Source="/Controls/ListBoxItem.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 
