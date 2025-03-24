@@ -3,8 +3,10 @@ using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.Factories;
 using AngelSix.BatchProcess.ViewModels;
 using AngelSix.BatchProcess.ViewModels.Pages;
+using AngelSix.BatchProcess.Views;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Avalonia.Metadata;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +25,10 @@ namespace AngelSix.BatchProcess
 
         public override void OnFrameworkInitializationCompleted()
         {
+            // Line below is needed to remove Avalonia data validation.
+            // Without this line you will get duplicate validations from both Avalonia and CT
+            BindingPlugins.DataValidators.RemoveAt(0);
+
             ServiceCollection serviceCollection = new ServiceCollection();
             serviceCollection.AddSingleton<MainViewModel>();
             serviceCollection.AddSingleton<ActionsPageViewModel>();
@@ -52,12 +58,18 @@ namespace AngelSix.BatchProcess
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainView
+                desktop.MainWindow = new MainWindow
                 {
                     DataContext = serviceProvider.GetRequiredService<MainViewModel>()
                 };
             }
-
+            else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+            {
+                singleViewPlatform.MainView = new MainView
+                {
+                    DataContext = new MainViewModel()
+                };
+            }
             base.OnFrameworkInitializationCompleted();
         }
     }

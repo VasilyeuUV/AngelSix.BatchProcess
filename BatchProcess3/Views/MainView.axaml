@@ -1,18 +1,17 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
-        x:Class="AngelSix.BatchProcess.MainView"
-        Width="1400" Height="800"
-        MinWidth="1400" MinHeight="800"
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
+             x:Class="AngelSix.BatchProcess.Views.MainView"
+             
+             Width="1400" Height="800"
+             MinWidth="1400" MinHeight="800"
         
-        xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels"
-        xmlns:view="clr-namespace:AngelSix.BatchProcess.Views"
-        x:DataType="vm:MainViewModel"
-        
-        Title="{Binding Title}"
-        >
+             xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels"
+             xmlns:view="clr-namespace:AngelSix.BatchProcess.Views"
+             x:DataType="vm:MainViewModel"
+             >
 
   <Design.DataContext>
     <vm:MainViewModel/>
@@ -107,4 +106,5 @@
       </Grid>
     </Border>
   </Grid>
-</Window>
+
+</UserControl>
