@@ -21,8 +21,13 @@ public partial class ActionsPageView : UserControl
         base.OnInitialized();
     }
 
-    private void ActionsTab_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
-        => OnTabChanged();
+    private void ActionsTab_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (Equals(e.Source, ActionsTabControl))
+        {
+            OnTabChanged();
+        }
+    }
 
     private void OnTabChanged()
     {
@@ -35,7 +40,7 @@ public partial class ActionsPageView : UserControl
         //}
 
         // Get active tab control (Pages inside of each tab)
-        var selectedPage = (ActionsTabControl?.SelectedItem as TabItem)?.Content as Control;
+        Control? selectedPage = (ActionsTabControl?.SelectedItem as TabItem)?.Content as Control;
         if (selectedPage == null)
         {
             return;

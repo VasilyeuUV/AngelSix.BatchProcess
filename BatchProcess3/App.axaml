@@ -105,14 +105,6 @@
       <GradientStop Offset="1" Color="#009900"/>
     </LinearGradientBrush>
 
-    <!-- Warning -->
-    <LinearGradientBrush x:Key="WarningGradient"
-                     StartPoint="0%, 0%"
-                     EndPoint="100%, 0%">
-      <GradientStop Offset="0" Color="#FF0000"/>
-      <GradientStop Offset="1" Color="#AA0000"/>
-    </LinearGradientBrush>
-
     <!-- Alert -->
     <LinearGradientBrush x:Key="AlertGradient"
                      StartPoint="0%, 0%"
@@ -128,5 +120,20 @@
       <GradientStop Offset="1" Color="#FFFF00"/>
     </LinearGradientBrush>
 
+    <!-- Danger -->
+    <LinearGradientBrush x:Key="DangerGradient"
+                     StartPoint="0%, 0%"
+                     EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#FF0000"/>
+      <GradientStop Offset="1" Color="#AA0000"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DangerHoverGradient"
+                     StartPoint="0%, 0%"
+                     EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#FF4444"/>
+      <GradientStop Offset="1" Color="#BB1111"/>
+    </LinearGradientBrush>
+    
   </Application.Resources>
 </Application>

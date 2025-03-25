@@ -1,5 +1,6 @@
 ﻿using System;
 using AngelSix.BatchProcess.ViewModels;
+using AngelSix.BatchProcess.ViewModels.Pages;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 
@@ -32,7 +33,7 @@ internal class ViewLocator : IDataTemplate
     }
 
     public bool Match(object? data)
-        => data is ViewModelBase;
+        => data is PageViewModel;
 
     #endregion // IDataTemplate
 }

@@ -9,9 +9,11 @@
         <StackPanel Spacing="15">
           <Button Content="Normal"/>
           <Button Classes="small" Content="Small"/>
+          <Button Classes="smaller" Content="Smaller"/>
           <Button Classes="subtle" Content="Subtle"/>
           <Button Classes="outline" Content="Outline"/>
           <Button Classes="alert" Content="Alert"/>
+          <Button Classes="danger" Content="Danger"/>
           <Button Classes="transparent">
             <Label Classes="icon-only"
                    Content="&#xE272;"/>
@@ -115,6 +117,14 @@
     <Setter Property="Padding" Value="6 2"/>
   </Style>
 
+  <!-- Smaller button -->
+
+  <Style Selector=":is(Button).smaller">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="CornerRadius" Value="5"/>
+    <Setter Property="Padding" Value="3 0"/>
+  </Style>
+
   <!-- Normal button -->
   <Style Selector=":is(Button):not(CheckBox)">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundSubtle}"/>
@@ -146,10 +156,27 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
         <Setter Property="Background" Value="{DynamicResource AlertHoverGradient}"/>
       </Style>
-      
-    </Style>    
+
+    </Style>
   </Style>
 
+  <!-- Danger button -->
+
+  <Style Selector=":is(Button).danger">
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+    <Setter Property="Background" Value="{DynamicResource DangerGradient}"/>
+
+    <Style Selector="^:pointerover /template/ ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+      <Setter Property="Background" Value="{DynamicResource DangerHoverGradient}"/>
+
+      <Style Selector="^ /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"/>
+        <Setter Property="Background" Value="{DynamicResource DangerHoverGradient}"/>
+      </Style>
+
+    </Style>
+  </Style>
 
   <!-- Subtle button -->
 
@@ -182,7 +209,7 @@
         <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ActiveHoverGradient}"/>
       </Style>
-      
+
     </Style>
   </Style>
 

@@ -7,7 +7,15 @@
              
              Foreground="{DynamicResource PrimaryForeground}"
              Background="{DynamicResource PrimaryBackground}"
+             xmlns:vmp="clr-namespace:AngelSix.BatchProcess.ViewModels.Pages;assembly=AngelSix.BatchProcess"
+             xmlns:vmc="clr-namespace:AngelSix.BatchProcess.ViewModels.UserControls;assembly=AngelSix.BatchProcess"
+             x:DataType="vmp:ActionsPageViewModel"
              >
+  <Design.DataContext>
+    <vmp:ActionsPageViewModel/>
+  </Design.DataContext>
+
+
   <Grid ColumnDefinitions="*, 10, 1.5*, 10 1.5*">
 
     <Grid Grid.Column="0"
@@ -18,11 +26,36 @@
       <TextBlock Grid.Row="2"
                  Text="Print actions can be used to print drawings or models to specific printers with specifics settings"
                  TextWrapping="Wrap"/>
-      <ListBox Grid.Row="4">
-        
+      <ListBox Grid.Row="4"
+               ItemsSource="{Binding PrintList}">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="vmc:ActionsPrintViewModel">
+            <Grid ColumnDefinitions="*, Auto">
+              <Label Grid.Column="0"
+                     Content="{Binding JobName}"
+                     Margin="0 -5"
+                     Padding="0"
+                     VerticalAlignment="Center"/>
+              <Button Grid.Column="1"
+                      Classes="smaller danger"
+                      Command="{Binding $parent[ListBox].((vmp:ActionsPageViewModel)DataContext).DeletePrintItemCommand}"
+                      CommandParameter="{Binding Id}"
+                      IsVisible="{Binding IsSelected}"
+                      VerticalAlignment="Center">
+                <Label Classes="icon-only icon-outline"
+                       Content="&#xE4A6;"/>
+              </Button>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+        <ListBox.Styles>
+          <Style Selector="ListBoxItem" x:DataType="vmc:ActionsPrintViewModel">
+            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+          </Style>
+        </ListBox.Styles>
       </ListBox>
     </Grid>
-    
-    
+
+
   </Grid>
 </UserControl>
