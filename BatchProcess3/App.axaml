@@ -39,7 +39,8 @@
     <!-- FontFamily -->
     <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
     <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
-    <FontFamily x:Key="Nunito">/Assets/Fonts#Nunito</FontFamily>
+    <!--<FontFamily x:Key="Nunito">/Assets/Fonts#Nunito</FontFamily>-->
+    <FontFamily x:Key="DefaultFontFamily">/Assets/Fonts/NotoSans.ttf</FontFamily>
 
     <!-- SolidColorBrush -->
     <SolidColorBrush x:Key="PrimaryForeground">#CFCFCF</SolidColorBrush>
@@ -47,7 +48,7 @@
     <SolidColorBrush x:Key="PrimaryBackground">#14172D</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
-    
+
     <!--################################################################################################-->
     <!-- REGION GRADIENTS -->
 
@@ -81,14 +82,14 @@
       <GradientStop Offset="0" Color="#7C59CD"/>
       <GradientStop Offset="1" Color="#7C59CD"/>
     </LinearGradientBrush>
-    
+
     <LinearGradientBrush x:Key="ActiveHoverGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">
       <GradientStop Offset="0" Color="#6633DD"/>
       <GradientStop Offset="1" Color="#6633DD"/>
     </LinearGradientBrush>
-    
+
     <LinearGradientBrush x:Key="HoverGradient"
                          StartPoint="0%, 0%"
                          EndPoint="100%, 0%">

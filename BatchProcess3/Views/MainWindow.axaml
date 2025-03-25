@@ -9,6 +9,7 @@
         
         xmlns:local="clr-namespace:AngelSix.BatchProcess.Views"
         Title="AngelSix.BatchProcess"
+        WindowStartupLocation="CenterScreen"
         >
   <local:MainView/>
 </Window>

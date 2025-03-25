@@ -2,13 +2,7 @@
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
 
-public partial class HistoryPageViewModel : PageViewModel
+public partial class HistoryPageViewModel()
+    : PageViewModel(ApplicationPageName.History)
 {
-    /// <summary>
-    /// CTOR
-    /// </summary>
-    public HistoryPageViewModel()
-    {
-        PageName = ApplicationPageName.History;
-    }
 }

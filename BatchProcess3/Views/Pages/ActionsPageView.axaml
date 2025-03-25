@@ -8,6 +8,7 @@
              Foreground="{DynamicResource PrimaryForeground}"
              Background="{DynamicResource PrimaryBackground}"
              xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels.Pages"
+             xmlns:uc="clr-namespace:AngelSix.BatchProcess.Views.UserControls"
              x:DataType="vm:ActionsPageViewModel"
              >
   <Design.DataContext>
@@ -38,10 +39,11 @@
     <!-- MAIN -->
     <Border Grid.Row="1"
             Padding="25">
-      <TabControl Grid.Row="1">
+      <TabControl Name="ActionsTabControl"
+                  SelectionChanged="ActionsTab_SelectionChanged">
         <TabItem Header="Print"
                  IsSelected="True">
-          <TextBlock Text="This is Tab 1"/>
+          <uc:ActionsPrintView/>
         </TabItem>
         <TabItem Header="Custom Properties">
           <TextBlock Text="This is Tab 2"/>

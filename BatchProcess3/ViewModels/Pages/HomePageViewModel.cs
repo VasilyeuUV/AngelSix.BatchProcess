@@ -2,13 +2,7 @@
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
 
-public partial class HomePageViewModel : PageViewModel
+public partial class HomePageViewModel()
+    : PageViewModel(ApplicationPageName.Home)
 {
-    /// <summary>
-    /// CTOR.
-    /// </summary>
-    public HomePageViewModel()
-    {
-        PageName = ApplicationPageName.Home;
-    }
 }

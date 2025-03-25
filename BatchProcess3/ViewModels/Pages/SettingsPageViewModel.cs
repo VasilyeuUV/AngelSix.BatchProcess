@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using AngelSix.BatchProcess.Data;
-using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
@@ -13,9 +12,8 @@ public partial class SettingsPageViewModel : PageViewModel
     /// CTOR.
     /// </summary>
     public SettingsPageViewModel()
+        : base(ApplicationPageName.Settings)
     {
-        PageName = ApplicationPageName.Settings;
-
         // TEMP: Remove
         LocationPaths =
             [

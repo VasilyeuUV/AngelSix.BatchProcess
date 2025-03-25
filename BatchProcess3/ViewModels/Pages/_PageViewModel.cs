@@ -3,7 +3,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
 
-public partial class PageViewModel : ViewModelBase
+/// <summary>
+/// CTOR.
+/// </summary>
+public partial class PageViewModel(ApplicationPageName pageName)
+    : ViewModelBase
 {
-    [ObservableProperty] private ApplicationPageName _pageName;
+    [ObservableProperty] private ApplicationPageName _pageName = pageName;
 }

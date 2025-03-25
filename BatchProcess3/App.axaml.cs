@@ -67,7 +67,7 @@ namespace AngelSix.BatchProcess
             {
                 singleViewPlatform.MainView = new MainView
                 {
-                    DataContext = new MainViewModel()
+                    DataContext = serviceProvider.GetRequiredService<MainViewModel>()
                 };
             }
             base.OnFrameworkInitializationCompleted();
