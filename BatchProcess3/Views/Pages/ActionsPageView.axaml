@@ -40,7 +40,8 @@
     <Border Grid.Row="1"
             Padding="25">
       <TabControl Name="ActionsTabControl"
-                  SelectionChanged="ActionsTab_SelectionChanged">
+                  SelectionChanged="ActionsTab_SelectionChanged"
+                  Padding="0 15 0 0">
         <TabItem Header="Print"
                  IsSelected="True">
           <uc:ActionsPrintView/>

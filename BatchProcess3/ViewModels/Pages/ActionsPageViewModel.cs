@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.ViewModels.UserControls;
@@ -11,6 +12,7 @@ public partial class ActionsPageViewModel()
     : PageViewModel(ApplicationPageName.Actions)
 {
     [ObservableProperty] private ObservableCollection<ActionsPrintViewModel> _printList;
+    [ObservableProperty] private ActionsPrintViewModel _selectedPrintListItem;
 
 
     [RelayCommand]
@@ -31,9 +33,29 @@ public partial class ActionsPageViewModel()
         //TODO: Fetch from a database/service provider
         PrintList =
             [
-                new ActionsPrintViewModel{Id = "1", JobName = "Print Only Drawings"},
-                new ActionsPrintViewModel{Id = "2", JobName = "Print All Drawings Scale To Fit"},
-                new ActionsPrintViewModel{Id = "3", JobName = "Print 3D Models A3"},
+                new ActionsPrintViewModel
+                {
+                    Id = "1",
+                    JobName = "Print Only Drawings",
+                    Description = "Print only drawing files",
+                    PrintDrawingRange = "0, 5, 7-8",
+                    PrintDrawings = true,
+                    DrawingExclusionList = $"Some item 1{Environment.NewLine}Some item 2{Environment.NewLine}Some item 3"
+                },
+                new ActionsPrintViewModel
+                {
+                    Id = "2",
+                    JobName = "Print All Drawings Scale To Fit",
+                    Description = "Prints drawing scaled to fit the paper",
+                    PrintDrawings = true
+                },
+                new ActionsPrintViewModel
+                {
+                    Id = "3",
+                    JobName = "Print 3D Models A3",
+                    Description = "Prints models as 3D visuals",
+                    PrintModels = true
+                },
             ];
     }
 
@@ -43,7 +65,7 @@ public partial class ActionsPageViewModel()
         // TODO: Pass this logic to a service that handles the database/storage/fetching
         // For now just do it direct in here
 
-        if (PrintList.Count(x => x.Id == id) != 1 )
+        if (PrintList.Count(x => x.Id == id) != 1)
         {
             // TODO: Throw/Warn?
         }

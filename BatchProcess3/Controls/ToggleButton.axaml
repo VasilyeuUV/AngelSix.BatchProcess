@@ -7,26 +7,26 @@
             Width="400">
       <Grid ColumnDefinitions="*, *">
         <StackPanel Spacing="10">
-          <CheckBox />
-          <CheckBox IsChecked="True"/>
-          <CheckBox>Unchecked</CheckBox>
-          <CheckBox IsChecked="True">Checked</CheckBox>
-          <CheckBox IsThreeState="True" IsChecked="{x:Null}">Indeterminate</CheckBox>
-          <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
+          <ToggleButton />
+          <ToggleButton IsChecked="True"/>
+          <ToggleButton>Unchecked</ToggleButton>
+          <ToggleButton IsChecked="True">Checked</ToggleButton>
+          <ToggleButton IsThreeState="True" IsChecked="{x:Null}">Indeterminate</ToggleButton>
+          <ToggleButton Width="120">Checkbox should wrap its text</ToggleButton>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Spacing="10">
-          <CheckBox IsEnabled="False"/>
-          <CheckBox IsEnabled="False"
+          <ToggleButton IsEnabled="False"/>
+          <ToggleButton IsEnabled="False"
                     IsChecked="True"/>
-          <CheckBox IsEnabled="False">Unchecked</CheckBox>
-          <CheckBox IsEnabled="False"
-                    IsChecked="True">Checked</CheckBox>
-          <CheckBox IsEnabled="False"
+          <ToggleButton IsEnabled="False">Unchecked</ToggleButton>
+          <ToggleButton IsEnabled="False"
+                    IsChecked="True">Checked</ToggleButton>
+          <ToggleButton IsEnabled="False"
                     IsThreeState="True"
-                    IsChecked="{x:Null}">Indeterminate</CheckBox>
-          <CheckBox IsEnabled="False"
-                    Width="120">Checkbox should wrap its text</CheckBox>
+                    IsChecked="{x:Null}">Indeterminate</ToggleButton>
+          <ToggleButton IsEnabled="False"
+                    Width="120">Checkbox should wrap its text</ToggleButton>
         </StackPanel>
       </Grid>
     </Border>
