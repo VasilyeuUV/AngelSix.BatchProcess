@@ -61,6 +61,7 @@ namespace AngelSix.BatchProcess
                 desktop.MainWindow = new MainWindow
                 {
                     DataContext = serviceProvider.GetRequiredService<MainViewModel>()
+                    //DataContext = new ViewModels._Test.MyViewModel()
                 };
             }
             else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)

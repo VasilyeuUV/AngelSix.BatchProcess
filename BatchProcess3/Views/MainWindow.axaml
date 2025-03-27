@@ -11,5 +11,17 @@
         Title="AngelSix.BatchProcess"
         WindowStartupLocation="CenterScreen"
         >
+  <!--xmlns:vm="clr-namespace:AngelSix.BatchProcess.ViewModels._Test"
+  x:DataType="vm:MyViewModel"-->
+  
   <local:MainView/>
+
+  <!--<Design.DataContext>
+    <vm:MyViewModel/>
+  </Design.DataContext>
+
+  <StackPanel>
+    <Label Content="{Binding MyString}"/>
+    <Label Content="{Binding MyStringFullProperty}"/>
+  </StackPanel>-->
 </Window>
