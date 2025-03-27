@@ -12,6 +12,7 @@ public partial class ActionsPrintViewModel : ViewModelBase
     [ObservableProperty] private string _drawingExclusionList;
     [ObservableProperty] private bool _printModels;
     [ObservableProperty] private bool _printDrawings;
+    [ObservableProperty] private bool _isNewItem;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(DrawingExclusionListTitle))]

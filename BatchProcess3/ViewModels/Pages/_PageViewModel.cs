@@ -23,6 +23,5 @@ public partial class PageViewModel : ViewModelBase
 
     protected virtual void OnDesignTimeConstructor()
     {
-
     }
 }

@@ -11,8 +11,8 @@ namespace AngelSix.BatchProcess.ViewModels.Pages;
 public partial class ActionsPageViewModel()
     : PageViewModel(ApplicationPageName.Actions)
 {
-    [ObservableProperty] private ObservableCollection<ActionsPrintViewModel> _printList;
-    [ObservableProperty] private ActionsPrintViewModel _selectedPrintListItem;
+    [ObservableProperty] private ObservableCollection<ActionsPrintViewModel> _printList = [];
+    [ObservableProperty] private ActionsPrintViewModel? _selectedPrintListItem;
 
 
     [RelayCommand]
@@ -72,6 +72,22 @@ public partial class ActionsPageViewModel()
 
         // Remove item
         PrintList.Remove(PrintList.First(x => x.Id == id));
+    }
+
+
+    [RelayCommand]
+    public void AddNewPrintItem()
+    {
+        // Create a new item
+        ActionsPrintViewModel newItem = new()
+        {
+            JobName = "New Print Item",
+            IsSelected = true,
+            IsNewItem = true,
+        };
+
+        // Add to the PrintList
+        PrintList.Add(newItem);
     }
 
 
