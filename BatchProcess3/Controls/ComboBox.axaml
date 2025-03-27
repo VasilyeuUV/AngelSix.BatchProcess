@@ -47,7 +47,7 @@
     <Setter Property="Foreground" Value="{DynamicResource ComboBoxForeground}" />
     <Setter Property="Background" Value="{DynamicResource ComboBoxBackground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ComboBoxBorderThemeThickness}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource PrimaryBorderThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
@@ -114,7 +114,7 @@
               <Border x:Name="PopupBorder"
                       Background="{DynamicResource PrimaryBackgroundGradient}"
                       BorderBrush="{DynamicResource PrimaryForeground}"
-                      BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+                      BorderThickness="{DynamicResource PrimaryBorderThickness}"
                       Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
                       HorizontalAlignment="Stretch"
                       CornerRadius="{DynamicResource OverlayCornerRadius}">
@@ -140,7 +140,7 @@
       <Setter Property="Margin" Value="0 10"/>
       <Setter Property="Padding" Value="0 10"/>
       <Setter Property="BorderBrush" Value="{DynamicResource DefaultGradient}"/>
-      <Setter Property="BorderThickness" Value="3"/>
+      <Setter Property="BorderThickness" Value="{DynamicResource PrimaryBorderThickness}"/>
     </Style>
 
     <!--  PointerOver State  -->

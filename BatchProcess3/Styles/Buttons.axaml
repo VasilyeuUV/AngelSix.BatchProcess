@@ -76,7 +76,7 @@
     <Setter Property="FontWeight" Value="Bold"/>
     <Setter Property="CornerRadius" Value="10"/>
     <Setter Property="Padding" Value="9 5.5 9.2 5.5"/>
-    <Setter Property="BorderThickness" Value="3"/>
+    <Setter Property="BorderThickness" Value="{DynamicResource PrimaryBorderThickness}"/>
   </Style>
 
   <Style Selector=":is(Button) Label">

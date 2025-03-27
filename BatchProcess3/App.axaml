@@ -32,6 +32,7 @@
         <MergeResourceInclude Source="/Controls/ListBoxItem.axaml"/>
         <MergeResourceInclude Source="/Controls/TabControl.axaml"/>
         <MergeResourceInclude Source="/Controls/TabItem.axaml"/>
+        <MergeResourceInclude Source="/Controls/ToggleButton.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 
@@ -48,6 +49,16 @@
     <SolidColorBrush x:Key="PrimaryBackground">#14172D</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
+
+    
+    
+    <!--################################################################################################-->
+    <!-- REGION CONSTANTS -->
+
+    <Thickness x:Key="PrimaryBorderThickness">2</Thickness>
+    
+    <!-- END REGION CONSTANTS -->
+
 
     <!--################################################################################################-->
     <!-- REGION GRADIENTS -->
