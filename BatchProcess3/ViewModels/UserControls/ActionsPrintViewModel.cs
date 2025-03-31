@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AngelSix.BatchProcess.ViewModels.ValueObjects;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AngelSix.BatchProcess.ViewModels.UserControls;
 
@@ -13,6 +14,7 @@ public partial class ActionsPrintViewModel : ViewModelBase
     [ObservableProperty] private bool _printModels;
     [ObservableProperty] private bool _printDrawings;
     [ObservableProperty] private bool _isNewItem;
+    [ObservableProperty] private ActionsPrinterProfileViewModel _printerProfile;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(DrawingExclusionListTitle))]

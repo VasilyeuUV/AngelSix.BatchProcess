@@ -116,6 +116,13 @@
       <GradientStop Offset="1" Color="#009900"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="SuccessHoverGradient" 
+                         StartPoint="0%, 0%" 
+                         EndPoint="100%, 0%">
+      <GradientStop Offset="0" Color="#44ff44"></GradientStop>
+      <GradientStop Offset="1" Color="#55cc55"></GradientStop>
+    </LinearGradientBrush>
+    
     <!-- Alert -->
     <LinearGradientBrush x:Key="AlertGradient"
                      StartPoint="0%, 0%"

@@ -9,6 +9,7 @@
              Background="{DynamicResource PrimaryBackground}"
              xmlns:vmp="clr-namespace:AngelSix.BatchProcess.ViewModels.Pages;assembly=AngelSix.BatchProcess"
              xmlns:vmc="clr-namespace:AngelSix.BatchProcess.ViewModels.UserControls;assembly=AngelSix.BatchProcess"
+             xmlns:vmo="clr-namespace:AngelSix.BatchProcess.ViewModels.ValueObjects;assembly=AngelSix.BatchProcess"
              x:DataType="vmp:ActionsPageViewModel"
              >
   <Design.DataContext>
@@ -70,13 +71,15 @@
 
     <!--###############################################################################-->
     <!-- GENERAL SETTINGS COLUMN -->
-    <StackPanel Grid.Column="2"
-                Spacing="10">
+    <Grid Grid.Column="2"
+          RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto, 10, Auto, 10, *, 10, Auto ">
       <Label Classes="h2"
              Content="General Settings"/>
-      <TextBlock Text="Set the main properties of the print job."
+      <TextBlock Grid.Row="2"
+                 Text="Set the main properties of the print job."
                  Margin="0 -10 0 10"/>
-      <Grid ColumnDefinitions="140, 15, *"
+      <Grid Grid.Row="4"
+                 ColumnDefinitions="140, 15, *"
             RowDefinitions="Auto, 15, Auto, 15, Auto">
         <Label Grid.Row="0" Grid.Column="0"
                Content="Job Name"
@@ -101,7 +104,30 @@
                     IsChecked="{Binding SelectedPrintListItem.PrintDrawings}"/>
         </StackPanel>
       </Grid>
-    </StackPanel>
+      <Label Grid.Row="6"
+             Classes="h2"
+             Content="Printer Settings"/>
+      <TextBlock Grid.Row="8"
+                 Text="Selects the profiles to use for paper sizes."
+                 Margin="0 -10 0 10"/>
+      <ListBox Grid.Row="10"
+               ItemsSource="{Binding PrinterProfiles}"
+               SelectedItem="{Binding SelectedPrintListItem.PrinterProfile}">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="vmo:ActionsPrinterProfileViewModel">
+            <StackPanel>
+              <Label FontWeight="Black"
+                     Content="{Binding Name}" />
+              <TextBlock Text="{Binding Description}"
+                         Margin="0 -5"
+                         Padding="0"
+                         VerticalAlignment="Center"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </Grid>
 
 
     <!--###############################################################################-->
