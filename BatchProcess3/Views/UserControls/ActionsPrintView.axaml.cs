@@ -12,10 +12,17 @@ public partial class ActionsPrintView : UserControl
 
     private void ListBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
-        if (e.AddedItems?[0] is ActionsPrintViewModel { IsNewItem: true })
+        if (e.AddedItems?[0] is ActionsPrintViewModel viewModel)
         {
-            JobNameTextBox.SelectAll();
-            JobNameTextBox.Focus();
+            // When a print view is selected
+            viewModel.SetSavedState();
+
+            // When it is a newly created item
+            if (viewModel.IsNewItem)
+            {
+                JobNameTextBox.SelectAll();
+                JobNameTextBox.Focus();
+            }
         }
     }
 }
