@@ -11,10 +11,6 @@ public partial class ActionsPrintViewModel : ViewModelBase
     private string _savedState = string.Empty;
 
     [ObservableProperty] private bool _isNewItem;
-    
-    [ObservableProperty]
-    [property: JsonIgnore]
-    private bool _isSelected;
 
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(HasChanged))]
@@ -46,7 +42,7 @@ public partial class ActionsPrintViewModel : ViewModelBase
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasChanged))]
-    private ActionsPrinterProfileViewModel _printerProfile = new();
+    private string _printerProfileId = "";
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(DrawingExclusionListTitle))]
@@ -66,5 +62,30 @@ public partial class ActionsPrintViewModel : ViewModelBase
     {
         _savedState = JsonSerializer.Serialize(this);
         OnPropertyChanged(nameof(HasChanged));
+    }
+
+    public void RestoreSavedState()
+    {
+        var savedState = JsonSerializer.Deserialize<ActionsPrintViewModel>(_savedState);
+        foreach (var propertyInfo in GetType().GetProperties())
+        {
+            // Only set setters, not get only properties
+            if (!propertyInfo.CanWrite)
+            {
+                continue;
+            }
+
+            // Ignore any properties that have a JsonIgnore ayttribute
+            if (propertyInfo.GetCustomAttributes(typeof(JsonIgnoreAttribute), inherit: false).GetLength(0) > 0)
+            {
+                continue;
+            }
+
+            // Pull the saved value
+            var originalValue = propertyInfo.GetValue(savedState);
+
+            // Restore it to this class
+            propertyInfo.SetValue(this, originalValue);
+        }
     }
 }
