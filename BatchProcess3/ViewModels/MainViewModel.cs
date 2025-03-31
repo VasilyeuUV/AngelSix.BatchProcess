@@ -1,5 +1,6 @@
 ﻿using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.Factories;
+using AngelSix.BatchProcess.ViewModels.Dialogs;
 using AngelSix.BatchProcess.ViewModels.Pages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,7 +14,12 @@ public partial class MainViewModel : ViewModelBase
     private readonly PageFactory _pageFactory;
 
     [ObservableProperty] private string _title = "AngelSix.BatchProcess";
-    [ObservableProperty] private bool _isSideMenuExpanded = true;                  // - show/hide side menu
+    [ObservableProperty] private bool _isSideMenuExpanded = true;                                   // - show/hide side menu
+
+    [ObservableProperty] private DialogViewModel _currentDialog = new ConfirmDialogViewModel()      // - user dialogs
+    { 
+        IsDialogOpen = true 
+    };
     
     //public SvgImage Logo => new()
     //{

@@ -1,5 +1,4 @@
 using System;
-using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.Factories;
 using AngelSix.BatchProcess.ViewModels;
 using AngelSix.BatchProcess.ViewModels.Pages;

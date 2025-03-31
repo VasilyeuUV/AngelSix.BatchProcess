@@ -156,11 +156,11 @@ public partial class ActionsPageViewModel()
             PrinterProfileId = "0"
         };
 
-        // SelectItem
-        SelectedPrintListItemId = newItem.Id;
-
         // Add to the PrintList
         PrintList.Add(newItem);
+
+        // SelectItem
+        SelectedPrintListItemId = newItem.Id;
     }
 
 

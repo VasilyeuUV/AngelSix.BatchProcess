@@ -36,6 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Dialogs\ConfirmDialogView.axaml.cs">
+      <DependentUpon>ConfirmDialogView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MainView.axaml.cs">
       <DependentUpon>MainView.axaml</DependentUpon>
     </Compile>
