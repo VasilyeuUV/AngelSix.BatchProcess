@@ -1,4 +1,3 @@
-using System;
 using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.ViewModels.Pages;
 using AngelSix.BatchProcess.Views.UserControls;

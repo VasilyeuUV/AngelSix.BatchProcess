@@ -14,5 +14,8 @@
     <vm:HomePageViewModel/>
   </Design.DataContext>
 
-  <Label Content="{Binding PageName}"/>
+  <StackPanel Spacing="10">
+    <Label Content="{Binding PageName}"/>
+    <Label Content="{Binding PageSubTitle}"/>
+  </StackPanel>
 </UserControl>

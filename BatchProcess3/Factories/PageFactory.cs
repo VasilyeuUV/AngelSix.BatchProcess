@@ -4,8 +4,14 @@ using AngelSix.BatchProcess.ViewModels.Pages;
 
 namespace AngelSix.BatchProcess.Factories;
 
-public class PageFactory(Func<ApplicationPageName, PageViewModel> factory)
+public class PageFactory(Func<Type, PageViewModel> factory)
 {
-    public PageViewModel GetPageViewModel(ApplicationPageName pageName)
-        => factory.Invoke(pageName);
+    public PageViewModel GetPageViewModel<T>(
+        Action<T>? afterCreation = null)
+        where T : PageViewModel
+    {
+        var viewModel = factory(typeof(T));
+        afterCreation?.Invoke((T)viewModel);
+        return viewModel;
+    }
 }

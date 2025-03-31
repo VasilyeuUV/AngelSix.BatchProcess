@@ -22,9 +22,14 @@ public partial class ActionsPageViewModel()
         // TODO^ Populate PrinterSettings
     };
 
-    [ObservableProperty] private ObservableCollection<ActionsPrintViewModel> _printList = [];
     [ObservableProperty] private ObservableCollection<ActionsPrinterProfileViewModel> _printerProfiles = [];
     [ObservableProperty] private ActionsPrintViewModel? _selectedPrintListItem;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(PrintListHasItems))]
+    private ObservableCollection<ActionsPrintViewModel> _printList = [];
+
+    public bool PrintListHasItems => PrintList.Any();
 
 
     [RelayCommand]
@@ -73,6 +78,22 @@ public partial class ActionsPageViewModel()
                 },
             ];
 
+        // Update PrintListHasItems, when collection changes
+        PrintList.CollectionChanged += (_, _) => OnPropertyChanged(nameof(PrintListHasItems));
+
+        if (PrintList.Count > 0)
+        {
+            // Select first item
+            PrintList.First().IsSelected = true;
+
+            // Store last fetched database save states
+            foreach (var printItem in PrintList)
+            {
+                printItem.SetSavedState();
+            }
+        }
+
+
         PrinterProfiles =
             [
                 _defaultPrinterProfile,
@@ -111,8 +132,7 @@ public partial class ActionsPageViewModel()
             // TODO: Throw/Warn?
         }
 
-        // Remove item
-        PrintList.Remove(PrintList.First(x => x.Id == id));
+        DeletePrintItemFromUI(id);
     }
 
 
@@ -124,6 +144,7 @@ public partial class ActionsPageViewModel()
         // Create a new item
         ActionsPrintViewModel newItem = new()
         {
+            Id = Guid.NewGuid().ToString("N"),
             JobName = "New Print Item",
             IsSelected = true,
             IsNewItem = true,
@@ -134,6 +155,38 @@ public partial class ActionsPageViewModel()
         PrintList.Add(newItem);
     }
 
+
+    [RelayCommand]
+    public void CancelPrintItem()
+    {
+        // Ignore is nothing is selected
+        if (SelectedPrintListItem is null)
+        {
+            return;
+        }
+
+        // If the selected item is new, delete it otherwise, restore from save state
+        if (!SelectedPrintListItem.IsNewItem)
+        {
+            DeletePrintItemFromUI(SelectedPrintListItem.Id);
+        }
+    }
+
+    private void DeletePrintItemFromUI(string id)
+    {
+        // Remove item
+        var index = PrintList.IndexOf(PrintList.First(x => x.Id == id));
+        PrintList.RemoveAt(index);
+
+        if (index > 0)
+        {
+            index--;
+        }
+        if (PrintList.Count > 0)
+        {
+            PrintList[index].IsSelected = true;
+        }
+    }
 
     protected override void OnDesignTimeConstructor()
         => FetchPrintActionsData();

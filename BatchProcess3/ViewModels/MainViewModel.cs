@@ -60,11 +60,12 @@ public partial class MainViewModel : ViewModelBase
 
 
     [RelayCommand] private void SideMenuResize() => IsSideMenuExpanded = !IsSideMenuExpanded;
-    [RelayCommand] private void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Home);
-    [RelayCommand] private void GoToProcess() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Process);
-    [RelayCommand] private void GoToActions() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Actions);
-    [RelayCommand] private void GoToMacros() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Macros);
-    [RelayCommand] private void GoToReporter() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Reporter);
-    [RelayCommand] private void GoToHistory() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.History);
-    [RelayCommand] private void GoToSettings() => CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageName.Settings);
+    [RelayCommand] private void GoToHome()
+        => CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>(afterCreation => afterCreation.PageSubTitle = "Hello, world!");
+    [RelayCommand] private void GoToProcess() => CurrentPage = _pageFactory.GetPageViewModel<ProcessPageViewModel>();
+    [RelayCommand] private void GoToActions() => CurrentPage = _pageFactory.GetPageViewModel<ActionsPageViewModel>();
+    [RelayCommand] private void GoToMacros() => CurrentPage = _pageFactory.GetPageViewModel<MacrosPageViewModel>();
+    [RelayCommand] private void GoToReporter() => CurrentPage = _pageFactory.GetPageViewModel<ReporterPageViewModel>();
+    [RelayCommand] private void GoToHistory() => CurrentPage = _pageFactory.GetPageViewModel<HistoryPageViewModel>();
+    [RelayCommand] private void GoToSettings() => CurrentPage = _pageFactory.GetPageViewModel<SettingsPageViewModel>();
 }

@@ -4,6 +4,7 @@
              RequestedThemeVariant="Default"
              
              xmlns:local="clr-namespace:AngelSix.BatchProcess"
+             xmlns:vc="clr-namespace:AngelSix.BatchProcess.ValueConverters"
              >
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -36,6 +37,7 @@
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 
+    <vc:BooleanToBoldFontConverter x:Key="BooleanToBoldFontConverter" />
 
     <!-- FontFamily -->
     <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
