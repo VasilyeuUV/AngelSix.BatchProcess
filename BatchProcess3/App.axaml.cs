@@ -1,5 +1,6 @@
 using System;
 using AngelSix.BatchProcess.Factories;
+using AngelSix.BatchProcess.Services;
 using AngelSix.BatchProcess.ViewModels;
 using AngelSix.BatchProcess.ViewModels.Pages;
 using AngelSix.BatchProcess.Views;
@@ -51,6 +52,7 @@ namespace AngelSix.BatchProcess
             });
 
             serviceCollection.AddSingleton<PageFactory>();
+            serviceCollection.AddSingleton<DialogService>();
 
             ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 

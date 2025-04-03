@@ -1,5 +1,6 @@
 ﻿using AngelSix.BatchProcess.Data;
 using AngelSix.BatchProcess.Factories;
+using AngelSix.BatchProcess.Interfaces;
 using AngelSix.BatchProcess.ViewModels.Dialogs;
 using AngelSix.BatchProcess.ViewModels.Pages;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -7,7 +8,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AngelSix.BatchProcess.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+public partial class MainViewModel : ViewModelBase, IDialogProvider
 {
     private const string _buttonActiveClass = "active";
 
@@ -16,10 +17,10 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty] private string _title = "AngelSix.BatchProcess";
     [ObservableProperty] private bool _isSideMenuExpanded = true;                                   // - show/hide side menu
 
-    [ObservableProperty] private DialogViewModel _currentDialog = new ConfirmDialogViewModel()      // - user dialogs
-    { 
-        IsDialogOpen = true 
-    };
+    [ObservableProperty] private DialogViewModel _dialog;// = new ConfirmDialogViewModel()      // - user dialogs
+    //{ 
+    //    IsDialogOpen = true 
+    //};
     
     //public SvgImage Logo => new()
     //{

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using AngelSix.BatchProcess.Data;
+using AngelSix.BatchProcess.Services;
+using AngelSix.BatchProcess.ViewModels.Dialogs;
 using AngelSix.BatchProcess.ViewModels.UserControls;
 using AngelSix.BatchProcess.ViewModels.ValueObjects;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -9,7 +12,9 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AngelSix.BatchProcess.ViewModels.Pages;
 
-public partial class ActionsPageViewModel()
+public partial class ActionsPageViewModel(
+    MainViewModel mainViewModel,
+    DialogService dialogService)
     : PageViewModel(ApplicationPageName.Actions)
 {
     // TODO: Remove once we have database service
@@ -128,7 +133,7 @@ public partial class ActionsPageViewModel()
     }
 
     [RelayCommand]
-    public void DeletePrintItem(string id)
+    public async Task DeletePrintItemAsync(string id)
     {
         // TODO: Pass this logic to a service that handles the database/storage/fetching
         // For now just do it direct in here
@@ -138,7 +143,7 @@ public partial class ActionsPageViewModel()
             // TODO: Throw/Warn?
         }
 
-        DeletePrintItemFromUI(id);
+        await DeletePrintItemFromUIAsync(id);
     }
 
 
@@ -165,7 +170,7 @@ public partial class ActionsPageViewModel()
 
 
     [RelayCommand]
-    public void CancelPrintItem()
+    public async Task CancelPrintItemAsync()
     {
         // Ignore is nothing is selected
         if (SelectedPrintListItem is null)
@@ -176,7 +181,7 @@ public partial class ActionsPageViewModel()
         // If the selected item is new, delete it otherwise, restore from save state
         if (SelectedPrintListItem.IsNewItem)
         {
-            DeletePrintItemFromUI(SelectedPrintListItem.Id);
+            await DeletePrintItemFromUIAsync(SelectedPrintListItem.Id, warn: false);
         }
         else
         {
@@ -184,10 +189,33 @@ public partial class ActionsPageViewModel()
         }
     }
 
-    private void DeletePrintItemFromUI(string id)
+    private async Task DeletePrintItemFromUIAsync(string id, bool warn = true)
     {
-        // Remove item
         var index = PrintList.IndexOf(PrintList.First(x => x.Id == id));
+        if (index == -1)
+        {
+            return;
+        }
+
+        if (warn)
+        {
+
+            var confirmViewModel = new ConfirmDialogViewModel
+            {
+                Title = $"Delete {PrintList[index].JobName}?",
+                Message = "Are you sure you want to delete this print?"
+            };
+
+            await dialogService.ShowDialogAsync(mainViewModel, confirmViewModel);
+
+            // Ignore if we clecked cancel
+            if (!confirmViewModel.Confirmed)
+            {
+                return;
+            }
+        }
+
+        // Remove item
         PrintList.RemoveAt(index);
 
         if (index > 0)
