@@ -203,7 +203,21 @@ public partial class ActionsPageViewModel(
             var confirmViewModel = new ConfirmDialogViewModel
             {
                 Title = $"Delete {PrintList[index].JobName}?",
-                Message = "Are you sure you want to delete this print?"
+                Message = "Are you sure you want to delete this print?",
+                DialogWidth = 500,
+                OnConfirm = async (vm) =>
+                {
+
+                    await Task.Delay(2000);
+
+                    vm.ProgressText = "This is taking a while...";
+
+                    await Task.Delay(2000);
+
+                    vm.StatusText = "Oh no, something went wrong...";
+
+                    return false;
+                }
             };
 
             await dialogService.ShowDialogAsync(mainViewModel, confirmViewModel);
